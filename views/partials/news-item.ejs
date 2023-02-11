@@ -1,0 +1,9 @@
+<div class="curriculum-flex-happened-item news-works-flex-item curriculum-flex-happened-item-adjust">
+	<div class="news-item-title">
+		<h4><%= news[key].title %></h4>
+		<p><strong><%= news[key].subtitle %></strong></p>
+	</div>
+	<p class="news-list-time">📅<time datetime="<%= dateMaker.dateMakerFunction(news[key].date) %>"><%= dateMaker.dateMakerFunction(news[key].date) %></time></p>
+	<p  class="news-list-type"><%= news[key].type %></p>
+	<a href="<%= `news/${newsIdMaker.newsIdMakerFunction(news[key].title,news[key].subtitle)}` %>"><button class="btn custom-btn news-list-button">Olvasom!</button></a>
+</div>

@@ -1,0 +1,19 @@
+<article class="research-fields">
+				<h3 class="news-recommad-title">Other news</h3>
+				<div class="news-reccomand-group">
+					<% 
+					var count=0;
+					  Object.keys(allNews).map(function(key) {
+					if (count<5){
+						 %>
+							<div class="news-list-flex-item news-list-flex-item-recommand">
+							<h4><%= allNews[key].title %></h4>
+							<p class="news-list-time">📅<time><%= dateMaker.dateMakerFunction(allNews[key].date) %></time></p>
+							<a href="<%=`${newsIdMaker.newsIdMakerFunction(allNews[key].title,allNews[key].subtitle)}`%>"><button class="btn custom-btn custom-btn-news-recommand">Olvasom!</button></a>
+							</div>				
+					<% count++
+					console.log(count);
+					}}) %>
+					</div>
+				
+			</article>

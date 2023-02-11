@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<%- include('./partials/head.ejs') %>
+    <body>
+		<div class="container">
+			<%- include('./partials/header.ejs') %>
+			<%- include('./partials/titlerow-other-pages.ejs') %>
+			<article class="main curriculum-main">
+				<h2>My life (carrier?) so far</h2>
+				<p>...hope it's not boring that much</p>
+				<div class="main-text-curriculum">
+					<h3 class="curriculum-flex-year curriculum-flex-sum">In short</h3>
+				<div class="curriculum-flex-happened">
+					<ul class="curriculum-flex-happened-item curriculum-flex-happened-sum">
+						<li>+<%=workingYears%> yrs legal experience at <%=numberOfWorkplaces%> workplaces 🧑‍💼 </li>
+						<li><%=mtmtData%> publications 🖋️ </li>
+						<li>Legal bar exam from 2022 📜 </li>
+						<li>Phd candidate at Eötvös Loránd University (ELTE) 👨‍🎓 </li>
+						<li>Law degree (cum laude) - <abbr title="Eötvös Loránd University">ELTE</abbr> ⚖️ </li>
+						<li>Two Erasmus scholarship (Vilnius (2015) and Udine (2018)) 🧳 </li>
+						<li>Cambridge English CAE Certificate (C1) 🎩 </li>
+						<li>TELC Italian B2 Language Certificate 🍕 </li>
+						<li>Basic software developer skills 💻 </li>
+						<li>Mobility maker volunteer during UEFA EURO 2020 at Budapest ⚽ ⚽ </li>
+						<li>Living and working in Hungary, Budapest 🇭🇺</li>
+					</ul>
+				</div>
+					</div>
+					<% Object.keys(cv).map(function(key) { %>
+						<div class="main-text-curriculum">
+							<h3 class="curriculum-flex-year"><time datetime="<%=cv[key].year %>"><%= cv[key].year %></time></h3>
+							<div class="curriculum-flex-happened">
+							<% 
+								cv[key].happened.reverse().map(function(happen){ %>
+								<p class="curriculum-flex-happened-item"><%- happen %></p>
+					<% }) %>
+					
+					</div>
+				</div>
+				<% });%>
+				<div>
+				<h3>Want my CV?</h3>
+					<p><span class="accent-white">There you go:</span> in <a href="../assets/files/Balint_Ferencz_CV_HU_2023_febr.pdf">Hungarian</a> and in <a href="../assets/files/Balint_Ferencz_CV_EN_2023_febr.pdf">English</a></p>
+				</div>
+			</article>
+			<%- include('./partials/research-fields.ejs') %>
+			<%- include('./partials/social-row.ejs') %>
+			<%- include('./partials/footer.ejs') %>
+		</div>	
+	</body>

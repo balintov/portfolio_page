@@ -1,0 +1,12 @@
+<article class="research-fields">
+				<h2 class="section-title title-research-fields">Research fields and interests</h2>
+				<ul class="interest-group">
+						<% Object.keys(interests).map(function(key) { 
+						%>
+						<li class="<%= interests[key].accent %> research-fields-item">
+							<%= interests[key].interest %>
+					</li>
+						<% }); %>
+					</ul>
+				
+			</article>

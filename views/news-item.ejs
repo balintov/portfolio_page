@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>📰 | <%= news.title %> | balintov's website</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+		<link href="../assets/style.css" rel="stylesheet">			
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦝</text></svg>">
+		<meta property="og:url" content="<%=fullUrl%>" /> 
+		<meta property="og:type" content="<%=news.type%>" />
+		<meta property="og:title" content="<%=news.title%>" />
+		<meta property="og:description" content="<%=news.description %>" />
+		<meta property="og:image" content="<%=news.og_image_content %>" />
+	</head>
+    <body>
+		<div class="container">
+			<%- include('./partials/header.ejs') %>
+			<%- include('./partials/titlerow-news-post-page.ejs') %>
+			<article class="main main-news-item">
+				<div class="main-news-text">
+					<h3 lang="hu"><%= news.title %></h3>
+					<p lang="hu"><strong><%= news.subtitle %></strong></p>
+					<p lang="hu"><%= news.type %></p>
+					<p class="news-date"> 📅<%= dateMaker.dateMakerFunction(news.date)  %> </p>							
+					<p lang="hu"><%- news.text %></p>
+					<p lang="hu" class="back-to-news-button" style="margin-top: 10%;"><a href="/news">⬅️ Vissza a többi bejegyzéshez!</a></p>
+				</div>
+			</article>
+			<%- include('./partials/news-recommand.ejs') %>
+			<%- include('./partials/footer.ejs') %>
+		</div>	
+	</body>
+</html>

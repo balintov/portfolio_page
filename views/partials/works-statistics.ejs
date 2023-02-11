@@ -1,0 +1,19 @@
+<article class="works-statistics">
+				<h3 class="title-research-fields" style="color: yellow">quick statistics 📊</h3>
+				<ul class="works-statistics-details-container">
+					<li style="color: white"><%= "In sum: " + mtmtData.content.publicationCount + " " + "publications" %></li>
+					<li style="color: white"><%=  mtmtData.content.independentCitationCount + " " + "citations to my publications" %></li>
+					<li><a href="https://m2.mtmt.hu/<%=mtmtData.content.link %>" target="_blank">MTMT link </a></li>
+					<li><a href="https://m2.mtmt.hu/<%=mtmtData.content.link %>/summary" target="_blank">MTMT Summary Table </a></li>
+
+					<% for (var k=0; k<mtmtData.content.pubStats.types.length; k++) {
+						if (mtmtData.content.pubStats.types[k].count>0) { 
+							console.log(mtmtData.content.pubStats.types[k].count)
+							%>
+			<li style="color: white"><%= mtmtData.content.pubStats.types[k].count + " " +mtmtData.content.pubStats.types[k].typeEng + " " %></li>
+		<% }} %>
+					
+					
+					</ul>
+				
+			</article>

@@ -1,0 +1,43 @@
+<html>
+	<%- include('./partials/head.ejs') %>
+    <body>
+		<div class="container">
+			<%- include('./partials/header.ejs') %>
+			<%- include('./partials/titlerow.ejs') %>
+			<article class="main">
+				<div class="main-text">
+					<h2>i want your data!</h2>
+					<p>...but why is that?</p>
+					<p>i am planning to set up a <span class="accent-white">newsletter service</span> through which i intend to provide you with the latest news from the legal world and my personal life.</p>
+					<p>i <span class="accent-white">won't sell</span> your data to any companies (unless they pay me well of course)</p>
+				</div>
+			</article>
+			<aside class="balintov-figures">
+				<h2>Keep in touch man!🙏</h2>
+				<form class="form-container">
+					<div class="form-item">
+						<label class="form-text-item" for="name">Please provide your name: </label><br>
+						<input class="form-input-item" type="text" id="name" value="Your name 😉" required><br>
+					</div>
+					<div class="form-item">
+						<label class="form-text-item" for="age">How old are you? (not required)</label>
+						<input class="form-input-item" type="text" id="age" value="Your age 🎂"><br>
+					</div>
+					<div class="form-item">
+						<label class="form-text-item" for="age">What's your profession?</label>
+						<input class="form-input-item" type="text" id="profession" value="Your profession 🧑‍💼"><br>
+					</div>
+					<div class="form-item">
+						<label class="form-text-item" for="email">What's e-mail address?</label>
+						<input class="form-input-item" type="e-mail" id="email" value="yourName@domain.com ✉️"><br>
+					</div>
+					<input type="submit">
+				
+				</form>
+			</aside>
+			<%- include('./partials/contacts-access.ejs') %>
+			<%- include('./partials/social-row.ejs') %>
+			<%- include('./partials/footer.ejs') %>
+		</div>	
+	</body>
+</html>

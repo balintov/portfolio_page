@@ -1,0 +1,13 @@
+<div class="curriculum-flex-happened-item news-works-flex-item curriculum-flex-happened-item-adjust">
+	<h4 class="publication-title"><%= publications.content[key].title %></h4>
+	<ul class="publication-authors-details">
+		<% Object.keys(publications.content[key].authorships).map(authKey => { %>
+		<li class="publication-authors-details-flex-item"><%= publications.content[key].authorships[authKey].familyName + ' '+ publications.content[key].authorships[authKey].givenName %></li>
+		<% }) %>
+	</ul>
+	<ul class="publication-details">
+		<li class="publication-language"><img src="<%= translateFunction.translateFunction(publications.content[key].languages[0].nameEng, flagDictionary) %>" alt="HUNGARY" width="105%" height="180%"></li>
+		<li class="publication-year"><time datetime="<%=publications.content[key].publishedYear%>"><%= publications.content[key].publishedYear %></time></li>
+	</ul>
+	<a href="<%= `https://m2.mtmt.hu/${publications.content[key].link}` %>" target=”_blank” ><button class="btn custom-btn btn-work-item">MTMT page</button></a>
+</div>

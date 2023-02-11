@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+	<%- include('./partials/head.ejs') %>
+    <body>
+		<div class="container">
+			<%- include('./partials/header.ejs') %>
+			<%- include('./partials/titlerow-other-pages.ejs') %>
+			<article class="main curriculum-main">
+				<h2>Some pictures</h2>
+				<p>...hope it's not boring that much</p>
+				<% Object.keys(pictures).map(function(key) { %>
+						<div class="main-text-curriculum">
+							<h3 class="curriculum-flex-year-pictures"><%= pictures[key].title %></h3>
+							<div class="curriculum-flex-happened-pictures">
+							<% pictures[key].picturesSource.map(function(picSource, index){ %>
+								<img src="<%=picSource%>" alt="<%=pictures[key].picturesAlt[index]%>"class="curriculum-flex-happened-item-pictures" width="300" height="400">
+								<div class="picture-description-container">
+								<p><%=pictures[key].picturesAlt[index]%></p>
+									</div>
+					<% }) %>
+					
+					</div>
+				</div>
+				<% });%>
+			</article>
+			<%- include('./partials/research-fields.ejs') %>
+			<%- include('./partials/social-row.ejs') %>
+			<%- include('./partials/footer.ejs') %>
+		</div>	
+	</body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<%- include('./partials/head.ejs') %>
+    <body>
+		<div class="container">
+			<%- include('./partials/header.ejs') %>
+			<%- include('./partials/titlerow-other-pages.ejs') %>
+			<article class="main main-news">
+				<h2>News from the world</h2>
+				<p><mark class="accent-white">caveat:</mark> at the moment only in <strong>Hungarian 🔴⚪🟢</strong>
+				<div class="main-text-curriculum">
+					<h3 class="curriculum-flex-year">MOST RECENT</h3>
+					<div class="curriculum-flex-happened curriculum-most-recent">
+						<% Object.keys(news).map(function(key, index) { %>
+						<% if (index === 0 ) { %>
+						<%- include('./partials/news-item.ejs', {key: key, index: index}) %>
+						<%}%>
+						<% }) %>
+					</div>
+				</div>
+				<div class="main-text-curriculum">
+					<h3 class="curriculum-flex-year">QUITE RECENT</h3>
+					<div class="curriculum-flex-happened">
+						<% Object.keys(news).map(function(key, index) { %>
+						<% if (index <= 4 && index !=0 ) { %>
+						<%- include('./partials/news-item.ejs', {key: key, index: index}) %>
+						<%} %>
+						<% }) %>
+					</div>
+				</div>
+				<div class="main-text-curriculum">
+					<h3 class="curriculum-flex-year">ALL THE OTHERS</h3>
+					<div class="curriculum-flex-happened">
+					<% Object.keys(news).map(function(key, index) { %>
+					<% if (index > 4) { %>
+					<%- include('./partials/news-item.ejs', {key: key, index: index}) %>
+					<%} %>
+					<% }) %>
+					</div>
+				</div>
+			</article>
+			<%- include('./partials/research-fields.ejs') %>
+			<%- include('./partials/social-row.ejs') %>
+			<%- include('./partials/footer.ejs') %>
+		</div>	
+	</body>
